@@ -1,0 +1,639 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ruotian Peng</title>
+  <meta name="keywords" content="Ruotian Peng, personal website, research">
+  <meta name="description" content="Personal academic website of Ruotian Peng.">
+  <style>
+    html, body, div, span, h1, h2, h3, p, a, img, ol, ul, li, pre, code {
+      border: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 100%;
+      font-style: inherit;
+      font-weight: inherit;
+      margin: 0;
+      outline: none;
+      padding: 0;
+      vertical-align: baseline;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #f4f6f6;
+      color: #202124;
+      font-family: "Open Sans", Arial, Helvetica, sans-serif;
+      font-size: 14px;
+      line-height: 1.45;
+      margin: 2em auto;
+      max-width: 830px;
+      padding: 0 16px;
+      position: relative;
+    }
+
+    a {
+      color: #01579b;
+      text-decoration: none;
+    }
+
+    a:focus,
+    a:hover {
+      color: #f09228;
+      text-decoration: none;
+    }
+
+    h1 {
+      font-size: 20px;
+      font-weight: 400;
+      line-height: 1.1;
+    }
+
+    h2 {
+      font-size: 15pt;
+      font-weight: 700;
+      margin-bottom: 0.35em;
+    }
+
+    h3 {
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 0.15em;
+    }
+
+    strong,
+    b {
+      font-weight: 700;
+    }
+
+    em,
+    i {
+      font-style: italic;
+    }
+
+    ul {
+      list-style: disc;
+    }
+
+    li {
+      margin-left: 1.4em;
+      padding-bottom: 0.5em;
+    }
+
+    pre,
+    code {
+      font-family: "Courier New", monospace;
+      font-size: 13px;
+    }
+
+    pre {
+      background: #f4f6f6;
+      border-radius: 6px;
+      margin-top: 0.65em;
+      overflow-x: auto;
+      padding: 0.75em;
+      white-space: pre-wrap;
+    }
+
+    .paper pre {
+      display: none;
+    }
+
+    #nav {
+      font-family: Georgia, Helvetica, sans-serif;
+      font-size: 14px;
+      list-style: none;
+      margin-left: 830px;
+      position: fixed;
+      top: 50px;
+      width: 100px;
+    }
+
+    #nav li {
+      margin: 0 0 1px;
+      padding: 0;
+    }
+
+    #nav a {
+      background-color: #455a64;
+      color: #fff;
+      display: block;
+      padding: 6px 9px 7px;
+      text-decoration: none;
+    }
+
+    #nav a:hover {
+      color: #ffde00;
+    }
+
+    .section {
+      clear: both;
+      margin-bottom: 1.2em;
+    }
+
+    .panel,
+    .paper,
+    .profile {
+      background: #fff;
+      border-radius: 10px;
+      clear: both;
+      line-height: 1.4;
+      margin-bottom: 0.7em;
+      margin-top: 0.4em;
+      padding: 0.65em 0.8em;
+    }
+
+    .paper:hover {
+      background: #fffdee;
+    }
+
+    .paper.highlight {
+      background: #fff8cf;
+      border: 1px solid #f1d36b;
+    }
+
+    .paper.highlight:hover {
+      background: #fff3ae;
+    }
+
+    .pub-topic {
+      color: #37474f;
+      font-size: 15px;
+      margin: 0.75em 0 0.2em;
+    }
+
+    .pub-note {
+      color: #5f6368;
+      font-size: 13px;
+      margin: 0.2em 0 0.7em;
+    }
+
+    .pub-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin: 0.25em 0 0.55em;
+    }
+
+    .pub-links a {
+      background: #455a64;
+      border-radius: 4px;
+      color: #fff;
+      display: inline-block;
+      font-size: 13px;
+      padding: 4px 8px;
+    }
+
+    .pub-links a:hover {
+      color: #ffde00;
+    }
+
+    .profile {
+      align-items: center;
+      display: flex;
+      gap: 1.4em;
+      min-height: 164px;
+      padding: 1em;
+    }
+
+    .portrait {
+      align-items: center;
+      background: #f8fafb;
+      border-radius: 8px;
+      color: #455a64;
+      display: flex;
+      flex: 0 0 140px;
+      font-size: 42px;
+      height: 140px;
+      justify-content: center;
+      overflow: hidden;
+      width: 140px;
+    }
+
+    .portrait img {
+      display: block;
+      height: 100%;
+      object-fit: contain;
+      width: 100%;
+    }
+
+    .profile-info p {
+      margin-bottom: 0.65em;
+    }
+
+    .links a {
+      margin-right: 1.15em;
+      white-space: nowrap;
+    }
+
+    .meta {
+      color: #5f6368;
+    }
+
+    .venue {
+      color: #b71c1c;
+      font-style: italic;
+    }
+
+    .tag {
+      background: #428bca;
+      color: #fff;
+      display: inline-block;
+      font-size: 85%;
+      font-weight: 700;
+      line-height: 1;
+      margin-right: 6px;
+      padding: 0.15em 0.35em;
+      vertical-align: baseline;
+    }
+
+    .blurb {
+      color: #3c4043;
+      display: block;
+      margin-top: 0.6em;
+    }
+
+    .paper-figure {
+      background: #f8fafb;
+      border: 1px solid #d8e0e5;
+      border-radius: 6px;
+      display: none;
+      margin: 0.7em 0 0.65em;
+      overflow: hidden;
+      padding: 6px;
+    }
+
+    .paper-figure img {
+      display: block;
+      max-height: 210px;
+      object-fit: contain;
+      width: 100%;
+    }
+
+    .footer {
+      color: #5f6368;
+      font-size: 13px;
+      margin: 1.4em 0 0.5em;
+      text-align: center;
+    }
+
+    @media (max-width: 1080px) {
+      #nav {
+        display: flex;
+        gap: 1px;
+        margin: 0 0 1em;
+        position: static;
+        width: auto;
+      }
+    }
+
+    @media (max-width: 640px) {
+      body {
+        margin-top: 1em;
+        padding: 0 12px;
+      }
+
+      #nav {
+        flex-wrap: wrap;
+      }
+
+      .profile {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .portrait {
+        flex-basis: 120px;
+        height: 120px;
+        width: 120px;
+      }
+
+      .links a {
+        display: inline-block;
+        margin-bottom: 0.35em;
+      }
+
+      .paper-figure img {
+        max-height: 170px;
+      }
+    }
+  </style>
+  <script src="./src/hidebib.js"></script>
+</head>
+<body onload="hideallbibs()">
+  <ol id="nav">
+    <li><a href="#home" title="Home">Home</a></li>
+    <li><a href="#publications" title="Publications">Papers</a></li>
+    <li><a href="#contact" title="Contact">Contact</a></li>
+  </ol>
+
+  <a id="home"></a>
+  <div class="profile">
+    <div class="portrait">
+      <img src="src/profile.jpg" alt="Ruotian Peng profile photo">
+    </div>
+    <div class="profile-info">
+      <h1>Ruotian Peng <span class="meta">(彭若天)</span></h1>
+      <p class="links">
+        <a href="https://github.com/Ruotian-Peng">GitHub</a>
+        <a href="https://scholar.google.com/citations?user=l_eLH4MAAAAJ&hl=en">Google Scholar</a>
+        <a href="mailto:prtprt666@gmail.com">Email</a>
+      </p>
+      <p>Ph.D. student at Zhejiang University and Westlake University.</p>
+    </div>
+  </div>
+
+  <a id="about"></a>
+  <div class="section">
+    <h2>About Me</h2>
+    <div class="panel">
+      <p style="margin-bottom:9px">
+        I am Ruotian Peng (彭若天), a Ph.D. student at
+        <a href="https://www.zju.edu.cn/english/">Zhejiang University</a> and
+        <a href="https://en.westlake.edu.cn/">Westlake University</a>, advised by
+        <a href="https://ydwen.github.io/">Prof. Yandong Wen</a>.
+        I received my B.E. degree in Computer Science from
+        <a href="https://www.scut.edu.cn/en/">South China University of Technology</a>. I have also spent time at <a href="https://www.huawei.com/en/">Huawei Foundation Model Lab</a>.
+      </p>
+
+      <p style="margin-top:9px">
+        My research focuses on large language models, with a broad interest in improving their reasoning abilities
+        for challenging problems. I am particularly interested in enabling models to explore more effectively through
+        reinforcement learning (<a href="#peng2025simko">SimKO</a>, <a href="#peng2026meanorder">MOSA</a>),
+        improving formal reasoning so that model outputs become more reliable and verifiable
+        (<a href="#yu2025formalmath">FormalMATH</a>, <a href="#peng2026explorative">T-RL</a>), and studying
+        continual learning in real-world settings where models must adapt without forgetting
+        (<a href="#peng2026peft">PEFT-Arena</a>). Previously, I also worked on multimodal generation
+        (<a href="#peng2025patch">Patch Matters</a>, <a href="#ye2024openstory">OpenStory++</a>).
+      </p>
+      <p style="margin-top:9px">
+        I am currently interested in agent RL and tool-use RL. I believe that language models can develop stronger
+        capabilities by interacting with external environments, tools, and feedback, rather than learning only from
+        static data. 
+      </p>
+    </div>
+  </div>
+
+
+  <a id="publications"></a>
+  <div class="section">
+    <h2>Publications</h2>
+    <div class="pub-links">
+      <a href="#topic-exploration">Exploration in RL</a>
+      <a href="#topic-formal">Formal Reasoning</a>
+      <a href="#topic-multimodal">Multimodal LLMs</a>
+      <a href="#topic-continual">Continual Learning</a>
+      <a href="#topic-other">Other</a>
+    </div>
+    <p class="pub-note">* Equal contribution. † Corresponding author.</p>
+
+    <h3 class="pub-topic" id="topic-exploration">Exploration in RL for LLM Reasoning</h3>
+
+    <div class="paper highlight" id="peng2025simko">
+      <p>
+        <a href="https://doi.org/10.48550/arXiv.2510.14807"><b>SimKO: Simple Pass@K Policy Optimization</b></a><br>
+        <u>Ruotian Peng</u>*, Yi Ren*, Zhouliang Yu, Weiyang Liu, Yandong Wen†
+      </p>
+      <p><span class="venue">arXiv 2025</span></p>
+      <p>
+        <a href="https://doi.org/10.48550/arXiv.2510.14807">arXiv</a>&nbsp;|&nbsp;
+        <a href="https://github.com/CLR-Lab/SimKO">code</a>&nbsp;|&nbsp;
+        <a href="https://spherelab.ai/simko/">project</a>&nbsp;|&nbsp;
+        <a href="javascript:togglefig('peng2025simko')" class="togglefig">fig</a>&nbsp;|&nbsp;
+        <a href="javascript:togglebib('peng2025simko')" class="togglebib">bib</a>
+      </p>
+      <a class="paper-figure" href="src/simko.png">
+        <img src="src/simko.png" alt="SimKO overview figure">
+      </a>
+      <span class="blurb">
+        We introduce a new perspective for understanding RLVR dynamics by using top-N probabilities as a tractable
+        approximation of the full token-level distribution, and propose a simple objective that preserves output
+        diversity and improves exploration for LLM reasoning.
+      </span>
+      <pre>@article{peng2025simko,
+  title = {SimKO: Simple Pass@K Policy Optimization},
+  author = {Peng, Ruotian and Ren, Yi and Yu, Zhouliang and Liu, Weiyang and Wen, Yandong},
+  journal = {arXiv preprint arXiv:2510.14807},
+  year = {2025}
+}</pre>
+    </div>
+
+    <div class="paper highlight" id="peng2026meanorder">
+      <p>
+        <b>Preserving Exploration for LLM Reasoning via Mean Order-Statistic Alignment</b><br>
+        <u>Ruotian Peng</u>*, Yi Ren*, Longfei Li, Yandong Wen†
+      </p>
+      <p><span class="venue">Coming soon</span></p>
+      <p>
+        paper coming soon&nbsp;|&nbsp;
+        <a href="javascript:togglefig('peng2026meanorder')" class="togglefig">fig</a>&nbsp;|&nbsp;
+        <a href="javascript:togglebib('peng2026meanorder')" class="togglebib">bib</a>
+      </p>
+      <a class="paper-figure" href="src/mosa.png">
+        <img src="src/mosa.png" alt="MOSA overview figure">
+      </a>
+      <span class="blurb">
+        We argue that token-wise KL is too local to preserve sequence-level exploration, and propose MOSA to align
+        the model's global exploration behavior through a mean order-statistic profile, improving both pass@1 and
+        pass@K across reasoning and coding benchmarks.
+      </span>
+      <pre>@misc{peng2026meanorder,
+  title = {Preserving Exploration for LLM Reasoning via Mean Order-Statistic Alignment},
+  author = {Peng, Ruotian and Ren, Yi and Li, Longfei and Wen, Yandong},
+  year = {2026},
+  note = {Coming soon}
+}</pre>
+    </div>
+
+    <h3 class="pub-topic" id="topic-formal">Formal Reasoning</h3>
+
+
+
+    <div class="paper highlight" id="yu2025formalmath">
+      <p>
+        <a href="https://doi.org/10.48550/arXiv.2505.02735"><b>FormalMATH: Benchmarking Formal Mathematical Reasoning of Large Language Models</b></a><br>
+        Zhouliang Yu*, <u>Ruotian Peng</u>*, Keyi Ding*, Yizhe Li, Zhongyuan Peng, Minghao Liu, Yifan Zhang,
+        Zheng Yuan, Huajian Xin, Wenhao Huang, Yandong Wen, Ge Zhang, Weiyang Liu†
+      </p>
+      <p><span class="venue">arXiv 2025</span></p>
+      <p>
+        <a href="https://doi.org/10.48550/arXiv.2505.02735">arXiv</a>&nbsp;|&nbsp;
+        <a href="https://github.com/Sphere-AI-Lab/FormalMATH-Bench">code</a>&nbsp;|&nbsp;
+        <a href="https://sphere-ai-lab.github.io/FormalMATH/">project</a>&nbsp;|&nbsp;
+        <a href="javascript:togglefig('yu2025formalmath')" class="togglefig">fig</a>&nbsp;|&nbsp;
+        <a href="javascript:togglebib('yu2025formalmath')" class="togglebib">bib</a>
+      </p>
+      <a class="paper-figure" href="src/formalmath.png">
+        <img src="src/formalmath.png" alt="FormalMATH overview figure">
+      </a>
+      <span class="blurb">
+        We build a large-scale Lean4 benchmark for formal mathematical reasoning and evaluate current LLM-based
+        theorem provers across diverse mathematical domains.
+      </span>
+      <pre>@article{yu2025formalmath,
+  title = {FormalMATH: Benchmarking Formal Mathematical Reasoning of Large Language Models},
+  author = {Yu, Zhouliang and Peng, Ruotian and Ding, Keyi and Li, Yizhe and Peng, Zhongyuan and Liu, Minghao and Zhang, Yifan and Yuan, Zheng and Xin, Huajian and Huang, Wenhao and Wen, Yandong and Zhang, Ge and Liu, Weiyang},
+  journal = {arXiv preprint arXiv:2505.02735},
+  year = {2025}
+}</pre>
+    </div>
+    <div class="paper" id="peng2026explorative">
+      <p>
+        <b>Advancing Formal Mathematical Reasoning with Explorative Reinforcement Learning</b><br>
+        Zhouliang Yu, Zeju Qiu, <u>Ruotian Peng</u>, Keyi Ding, Jiyao Zhang, Han Shi, Yandong Wen, Weiyang Liu†
+      </p>
+      <p><span class="venue">Coming soon</span></p>
+      <p>
+        paper coming soon&nbsp;|&nbsp;
+        <a href="javascript:togglebib('peng2026explorative')" class="togglebib">bib</a>
+      </p>
+      <pre>@misc{peng2026explorative,
+  title = {Advancing Formal Mathematical Reasoning with Explorative Reinforcement Learning},
+  author = {Yu, Zhouliang and Qiu, Zeju and Peng, Ruotian and Ding, Keyi and Zhang, Jiyao and Shi, Han and Wen, Yandong and Liu, Weiyang},
+  year = {2026},
+  note = {Coming soon}
+}</pre>
+    </div>
+    <h3 class="pub-topic" id="topic-multimodal">Multimodal Large Language Models</h3>
+
+    <div class="paper highlight" id="peng2025patch">
+      <p>
+        <a href="https://openaccess.thecvf.com/content/CVPR2025/html/Peng_Patch_Matters_Training-free_Fine-grained_Image_Caption_Enhancement_via_Local_Perception_CVPR_2025_paper.html"><b>Patch Matters: Training-free Fine-grained Image Caption Enhancement via Local Perception</b></a><br>
+        <u>Ruotian Peng</u>*, Haiying He*, Yake Wei, Yandong Wen, Di Hu†
+      </p>
+      <p><span class="venue">CVPR 2025</span></p>
+      <p>
+        <a href="https://doi.org/10.48550/arXiv.2504.06666">arXiv</a>&nbsp;|&nbsp;
+        <a href="https://github.com/GeWu-Lab/Patch-Matters">code</a>&nbsp;|&nbsp;
+        <a href="javascript:togglefig('peng2025patch')" class="togglefig">fig</a>&nbsp;|&nbsp;
+        <a href="javascript:togglebib('peng2025patch')" class="togglebib">bib</a>
+      </p>
+      <a class="paper-figure" href="src/patch.png">
+        <img src="src/patch.png" alt="Patch Matters overview figure">
+      </a>
+      <span class="blurb">
+        We enhance image captioning without training by decomposing images into local patches, extracting
+        fine-grained details, and aggregating them into more faithful long-form descriptions.
+      </span>
+      <pre>@inproceedings{peng2025patch,
+  title = {Patch Matters: Training-free Fine-grained Image Caption Enhancement via Local Perception},
+  author = {Peng, Ruotian and He, Haiying and Wei, Yake and Wen, Yandong and Hu, Di},
+  booktitle = {CVPR},
+  year = {2025}
+}</pre>
+    </div>
+
+    <div class="paper" id="ye2024openstory">
+      <p>
+        <a href="https://doi.org/10.48550/arXiv.2408.03695"><b>Openstory++: A Large-scale Dataset and Benchmark for Instance-aware Open-domain Visual Storytelling</b></a><br>
+        Zilyu Ye*, Jinxiu Liu*, <u>Ruotian Peng</u>*, Jinjin Cao, Zhiyang Chen, Yiyang Zhang, Ziwei Xuan,
+        Mingyuan Zhou, Xiaoqian Shen, Mohamed Elhoseiny, Qi Liu, Guo-Jun Qi†
+      </p>
+      <p><span class="venue">arXiv 2024</span></p>
+      <p>
+        <a href="https://doi.org/10.48550/arXiv.2408.03695">arXiv</a>&nbsp;|&nbsp;
+        <a href="https://github.com/YeLuoSuiYou/openstorypp">code</a>&nbsp;|&nbsp;
+        <a href="https://openstorypp.github.io/">project</a>&nbsp;|&nbsp;
+        <a href="javascript:togglebib('ye2024openstory')" class="togglebib">bib</a>
+      </p>
+      <pre>@article{ye2024openstory,
+  title = {Openstory++: A Large-scale Dataset and Benchmark for Instance-aware Open-domain Visual Storytelling},
+  author = {Ye, Zilyu and Liu, Jinxiu and Peng, Ruotian and Cao, Jinjin and Chen, Zhiyang and Zhang, Yiyang and Xuan, Ziwei and Zhou, Mingyuan and Shen, Xiaoqian and Elhoseiny, Mohamed and Liu, Qi and Qi, Guo-Jun},
+  journal = {arXiv preprint arXiv:2408.03695},
+  year = {2024}
+}</pre>
+    </div>
+
+    <h3 class="pub-topic" id="topic-continual">Continual Learning</h3>
+
+    <div class="paper" id="peng2026peft">
+      <p>
+        <a href="https://spherelab.ai/PEFT-Arena"><b>PEFT-Arena: Understanding Parameter-Efficient Finetuning from a Stability-Plasticity Perspective</b></a><br>
+        Yangyi Huang*, <u>Ruotian Peng</u>*, Zeju Qiu, Jiale Kang, Yandong Wen, Bernhard Schölkopf, Weiyang Liu†
+      </p>
+      <p><span class="venue">ICLR 2026@CAO</span></p>
+      <p>
+        <a href="https://openreview.net/forum?id=HHplQA8fY8">paper</a>&nbsp;|&nbsp;
+        <a href="https://github.com/Sphere-AI-Lab/PEFT-Arena">code</a>&nbsp;|&nbsp;
+        <a href="https://spherelab.ai/PEFT-Arena">project</a>&nbsp;|&nbsp;
+        <a href="javascript:togglebib('peng2026peft')" class="togglebib">bib</a>
+      </p>
+      <pre>@misc{huang2026peftarena,
+  title = {PEFT-Arena: Understanding Parameter-Efficient Finetuning from a Stability-Plasticity Perspective},
+  author = {Huang, Yangyi and Peng, Ruotian and Qiu, Zeju and Kang, Jiale and Wen, Yandong and Schölkopf, Bernhard and Liu, Weiyang},
+  year = {2026}
+}</pre>
+    </div>
+
+    <h3 class="pub-topic" id="topic-other">Other</h3>
+
+    <div class="paper" id="peng2025gazenum">
+      <p>
+        <a href="https://doi.org/10.1007/s42486-024-00165-w"><b>Gazenum: Unlock Your Phone with Gaze Tracking Viewing Numbers for Authentication</b></a><br>
+        <u>Ruotian Peng</u>, Yang Gao, Zhanpeng Jin†
+      </p>
+      <p><span class="venue">CCF Transactions on Pervasive Computing and Interaction, 2025</span></p>
+      <p>
+        <a href="https://doi.org/10.1007/s42486-024-00165-w">paper</a>&nbsp;|&nbsp;
+        <a href="javascript:togglebib('peng2025gazenum')" class="togglebib">bib</a>
+      </p>
+      <pre>@article{peng2025gazenum,
+  title = {Gazenum: Unlock Your Phone with Gaze Tracking Viewing Numbers for Authentication},
+  author = {Peng, Ruotian and Gao, Yang and Jin, Zhanpeng},
+  journal = {CCF Transactions on Pervasive Computing and Interaction},
+  volume = {7},
+  number = {1},
+  pages = {1--14},
+  year = {2025}
+}</pre>
+    </div>
+
+    <div class="paper" id="li2025foot">
+      <p>
+        <a href="https://doi.org/10.1007/s10462-024-11087-5"><b>Psychological and Physiological Computing Based on Multi-dimensional Foot Information</b></a><br>
+        Shengyang Li, Huilin Yao, <u>Ruotian Peng</u>, Yuanjun Ma, Bowen Zhang, Zhiyao Zhao,
+        Jincheng Zhang, Siyuan Chen, Shibin Wu, Lin Shu†
+      </p>
+      <p><span class="venue">Artificial Intelligence Review, 2025</span></p>
+      <p>
+        <a href="https://doi.org/10.1007/s10462-024-11087-5">paper</a>&nbsp;|&nbsp;
+        <a href="javascript:togglebib('li2025foot')" class="togglebib">bib</a>
+      </p>
+      <pre>@article{li2025foot,
+  title = {Psychological and Physiological Computing Based on Multi-dimensional Foot Information},
+  author = {Li, Shengyang and Yao, Huilin and Peng, Ruotian and Ma, Yuanjun and Zhang, Bowen and Zhao, Zhiyao and Zhang, Jincheng and Chen, Siyuan and Wu, Shibin and Shu, Lin},
+  journal = {Artificial Intelligence Review},
+  volume = {58},
+  number = {5},
+  pages = {136},
+  year = {2025}
+}</pre>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Experience</h2>
+    <div class="panel">
+      <ul>
+        <li><strong>Ph.D. student</strong>, Westlake University, 2025-present.</li>
+        <li><strong>Ph.D. student</strong>, Zhejiang University, 2025-present.</li>
+        <li><strong>Undergraduate student</strong>, Future Technology Institute, South China University of Technology, 2021-2025.</li>
+      </ul>
+    </div>
+  </div>
+
+  <a id="contact"></a>
+  <div class="section">
+    <h2>Contact</h2>
+    <div class="panel">
+      <p>Email: <a href="mailto:prtprt666@gmail.com">prtprt666@gmail.com</a></p>
+      <p>GitHub: <a href="https://github.com/Ruotian-Peng">github.com/Ruotian-Peng</a></p>
+    </div>
+  </div>
+
+  <div class="footer">Last updated on May 23, 2026.</div>
+</body>
+</html>
