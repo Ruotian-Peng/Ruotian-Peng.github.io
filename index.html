@@ -15,7 +15,7 @@
     "name": "Ruotian Peng",
     "alternateName": "Peng Ruotian",
     "url": "https://ruotian-peng.github.io/",
-    "image": "https://ruotian-peng.github.io/src/profile.jpg",
+    "image": "https://ruotian-peng.github.io/src/profile-2026.jpg",
     "email": "mailto:prtprt666@gmail.com",
     "jobTitle": "Ph.D. student",
     "affiliation": [
@@ -352,6 +352,7 @@
     }
   </style>
   <script src="./src/hidebib.js"></script>
+  <script defer src="https://events.vercount.one/js"></script>
 </head>
 <body onload="hideallbibs()">
   <ol id="nav">
@@ -363,7 +364,7 @@
   <a id="home"></a>
   <div class="profile">
     <div class="portrait">
-      <img src="src/profile.jpg" alt="Ruotian Peng profile photo">
+      <img src="src/profile-2026.jpg" alt="Ruotian Peng profile photo">
     </div>
     <div class="profile-info">
       <h1>Ruotian Peng <span class="meta">(彭若天)</span></h1>
@@ -386,7 +387,9 @@
         <a href="https://en.westlake.edu.cn/">Westlake University</a>, advised by
         <a href="https://ydwen.github.io/">Prof. Yandong Wen</a>.
         I received my B.E. degree in Computer Science from
-        <a href="https://www.scut.edu.cn/en/">South China University of Technology</a>. I have also spent time at <a href="https://www.huawei.com/en/">Huawei Foundation Model Lab</a>.
+        <a href="https://www.scut.edu.cn/en/">South China University of Technology</a>.
+        I previously interned at <a href="https://www.huawei.com/en/">Huawei Foundation Model Lab</a>, and I am
+        currently interning at <a href="https://www.alibaba.com/">Alibaba</a>'s Token Foundry.
       </p>
 
       <p style="margin-top:9px">
@@ -394,7 +397,7 @@
         for challenging problems. I am particularly interested in enabling models to explore more effectively through
         reinforcement learning (<a href="#peng2025simko">SimKO</a>, <a href="#peng2026meanorder">MOSA</a>),
         improving formal reasoning so that model outputs become more reliable and verifiable
-        (<a href="#yu2025formalmath">FormalMATH</a>, <a href="#peng2026explorative">T-RL</a>), and studying
+        (<a href="#yu2025formalmath">FormalMATH</a>), and studying
         continual learning in real-world settings where models must adapt without forgetting
         (<a href="#peng2026peft">PEFT-Arena</a>). Previously, I also worked on multimodal generation
         (<a href="#peng2025patch">Patch Matters</a>, <a href="#ye2024openstory">OpenStory++</a>).
@@ -427,7 +430,7 @@
         <a href="https://doi.org/10.48550/arXiv.2510.14807"><b>SimKO: Simple Pass@K Policy Optimization</b></a><br>
         <u>Ruotian Peng</u>*, Yi Ren*, Zhouliang Yu, Weiyang Liu, Yandong Wen†
       </p>
-      <p><span class="venue">arXiv 2025</span></p>
+      <p><span class="venue">Findings of EMNLP 2026</span></p>
       <p>
         <a href="https://doi.org/10.48550/arXiv.2510.14807">arXiv</a>&nbsp;|&nbsp;
         <a href="https://github.com/CLR-Lab/SimKO">code</a>&nbsp;|&nbsp;
@@ -443,11 +446,11 @@
         approximation of the full token-level distribution, and propose a simple objective that preserves output
         diversity and improves exploration for LLM reasoning.
       </span>
-      <pre>@article{peng2025simko,
+      <pre>@inproceedings{peng2025simko,
   title = {SimKO: Simple Pass@K Policy Optimization},
   author = {Peng, Ruotian and Ren, Yi and Yu, Zhouliang and Liu, Weiyang and Wen, Yandong},
-  journal = {arXiv preprint arXiv:2510.14807},
-  year = {2025}
+  booktitle = {Findings of the Association for Computational Linguistics: EMNLP 2026},
+  year = {2026}
 }</pre>
     </div>
 
@@ -456,7 +459,7 @@
         <b>Preserving Exploration for LLM Reasoning via Mean Order-Statistic Alignment</b><br>
         <u>Ruotian Peng</u>*, Yi Ren*, Longfei Li, Yandong Wen†
       </p>
-      <p><span class="venue">Coming soon</span></p>
+      <p><span class="venue">NeurIPS 2026</span></p>
       <p>
         paper coming soon&nbsp;|&nbsp;
         <a href="javascript:togglefig('peng2026meanorder')" class="togglefig">fig</a>&nbsp;|&nbsp;
@@ -470,11 +473,11 @@
         the model's global exploration behavior through a mean order-statistic profile, improving both pass@1 and
         pass@K across reasoning and coding benchmarks.
       </span>
-      <pre>@misc{peng2026meanorder,
+      <pre>@inproceedings{peng2026meanorder,
   title = {Preserving Exploration for LLM Reasoning via Mean Order-Statistic Alignment},
   author = {Peng, Ruotian and Ren, Yi and Li, Longfei and Wen, Yandong},
-  year = {2026},
-  note = {Coming soon}
+  booktitle = {Advances in Neural Information Processing Systems},
+  year = {2026}
 }</pre>
     </div>
 
@@ -488,7 +491,7 @@
         Zhouliang Yu*, <u>Ruotian Peng</u>*, Keyi Ding*, Yizhe Li, Zhongyuan Peng, Minghao Liu, Yifan Zhang,
         Zheng Yuan, Huajian Xin, Wenhao Huang, Yandong Wen, Ge Zhang, Weiyang Liu†
       </p>
-      <p><span class="venue">arXiv 2025</span></p>
+      <p><span class="venue">Findings of EMNLP 2026</span></p>
       <p>
         <a href="https://doi.org/10.48550/arXiv.2505.02735">arXiv</a>&nbsp;|&nbsp;
         <a href="https://github.com/Sphere-AI-Lab/FormalMATH-Bench">code</a>&nbsp;|&nbsp;
@@ -503,28 +506,11 @@
         We build a large-scale Lean4 benchmark for formal mathematical reasoning and evaluate current LLM-based
         theorem provers across diverse mathematical domains.
       </span>
-      <pre>@article{yu2025formalmath,
+      <pre>@inproceedings{yu2025formalmath,
   title = {FormalMATH: Benchmarking Formal Mathematical Reasoning of Large Language Models},
   author = {Yu, Zhouliang and Peng, Ruotian and Ding, Keyi and Li, Yizhe and Peng, Zhongyuan and Liu, Minghao and Zhang, Yifan and Yuan, Zheng and Xin, Huajian and Huang, Wenhao and Wen, Yandong and Zhang, Ge and Liu, Weiyang},
-  journal = {arXiv preprint arXiv:2505.02735},
-  year = {2025}
-}</pre>
-    </div>
-    <div class="paper" id="peng2026explorative">
-      <p>
-        <b>Advancing Formal Mathematical Reasoning with Explorative Reinforcement Learning</b><br>
-        Zhouliang Yu, Zeju Qiu, <u>Ruotian Peng</u>, Keyi Ding, Jiyao Zhang, Han Shi, Yandong Wen, Weiyang Liu†
-      </p>
-      <p><span class="venue">Coming soon</span></p>
-      <p>
-        paper coming soon&nbsp;|&nbsp;
-        <a href="javascript:togglebib('peng2026explorative')" class="togglebib">bib</a>
-      </p>
-      <pre>@misc{peng2026explorative,
-  title = {Advancing Formal Mathematical Reasoning with Explorative Reinforcement Learning},
-  author = {Yu, Zhouliang and Qiu, Zeju and Peng, Ruotian and Ding, Keyi and Zhang, Jiyao and Shi, Han and Wen, Yandong and Liu, Weiyang},
-  year = {2026},
-  note = {Coming soon}
+  booktitle = {Findings of the Association for Computational Linguistics: EMNLP 2026},
+  year = {2026}
 }</pre>
     </div>
     <h3 class="pub-topic" id="topic-multimodal">Multimodal Large Language Models</h3>
@@ -584,16 +570,17 @@
         <a href="https://spherelab.ai/PEFT-Arena"><b>PEFT-Arena: Understanding Parameter-Efficient Finetuning from a Stability-Plasticity Perspective</b></a><br>
         Yangyi Huang*, <u>Ruotian Peng</u>*, Zeju Qiu, Jiale Kang, Yandong Wen, Bernhard Schölkopf, Weiyang Liu†
       </p>
-      <p><span class="venue">ICLR 2026@CAO</span></p>
+      <p><span class="venue">Findings of EMNLP 2026</span></p>
       <p>
         <a href="https://openreview.net/forum?id=HHplQA8fY8">paper</a>&nbsp;|&nbsp;
         <a href="https://github.com/Sphere-AI-Lab/PEFT-Arena">code</a>&nbsp;|&nbsp;
         <a href="https://spherelab.ai/PEFT-Arena">project</a>&nbsp;|&nbsp;
         <a href="javascript:togglebib('peng2026peft')" class="togglebib">bib</a>
       </p>
-      <pre>@misc{huang2026peftarena,
+      <pre>@inproceedings{huang2026peftarena,
   title = {PEFT-Arena: Understanding Parameter-Efficient Finetuning from a Stability-Plasticity Perspective},
   author = {Huang, Yangyi and Peng, Ruotian and Qiu, Zeju and Kang, Jiale and Wen, Yandong and Schölkopf, Bernhard and Liu, Weiyang},
+  booktitle = {Findings of the Association for Computational Linguistics: EMNLP 2026},
   year = {2026}
 }</pre>
     </div>
@@ -664,6 +651,9 @@
     </div>
   </div>
 
-  <div class="footer">Last updated on May 23, 2026.</div>
+  <div class="footer">
+    This site has been visited <span id="vercount_value_site_pv">—</span> times in total.<br>
+    Last updated on September 29, 2026.
+  </div>
 </body>
 </html>
