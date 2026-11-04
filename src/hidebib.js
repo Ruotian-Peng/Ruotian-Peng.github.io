@@ -19,6 +19,39 @@ function hideallbibs() {
   }
 }
 
+function showPublicationView(viewId) {
+  var views = document.getElementsByClassName("publication-view");
+  var tabs = document.getElementsByClassName("publication-tab");
+
+  for (var i = 0; i < views.length; i += 1) {
+    views[i].classList.toggle("active", views[i].id === viewId);
+  }
+
+  for (var j = 0; j < tabs.length; j += 1) {
+    var isSelected = tabs[j].getAttribute("aria-controls") === viewId;
+    tabs[j].setAttribute("aria-selected", isSelected ? "true" : "false");
+  }
+}
+
+function showViewForHash() {
+  var targetId = window.location.hash.slice(1);
+  var target = targetId ? document.getElementById(targetId) : null;
+
+  if (target && target.closest("#all-papers")) {
+    showPublicationView("all-papers");
+  } else if (target && target.closest("#selected-papers")) {
+    showPublicationView("selected-papers");
+  }
+}
+
+function initializePage() {
+  hideallbibs();
+  showPublicationView("selected-papers");
+  showViewForHash();
+}
+
+window.addEventListener("hashchange", showViewForHash);
+
 function togglefig(paperid) {
   var paper = document.getElementById(paperid);
   if (!paper) return;
